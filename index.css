@@ -1,0 +1,59 @@
+html,body, #section1{
+	height:100%;
+	width:100%;
+	margin: 0;
+	padding: 0;
+	background-color:#607D8B;
+	overflow:hidden;
+	font-family:"Myriad Pro",Arial;
+}
+#skew_green{
+	position:absolute;
+	background-color:#009688;
+	height:100%;
+	width:70%;
+	transition:all 2.5s;
+	transform:skewX(-45deg);
+	box-shadow:0px 0px 10px 2px #000; 
+}
+#skew_red{
+	position:absolute;
+	background-color:#3F51B5;
+	height:100%;
+	width:70%;
+	transition:all 2s;
+	transform:skewX(-45deg);
+	box-shadow:0px 0px 10px 2px #000; 
+}
+#skew_black{
+	position:relative;
+	background-color:rgba(41,41,41,1.00);
+	height:100%;
+	width:70%;
+	transition:all 1s;
+	transform:skewX(-45deg);
+	box-shadow:0px 0px 10px 2px #000; 
+}
+.skew_items{
+	padding: 2% 2%;
+	color:#FFF;
+}
+.skew_items h1{
+	margin:0;
+	font-size:52px;
+	font-weight:300;
+	transition:all 1s;
+}	
+.skew_items h2{
+	position:absolute;
+	float:right;
+	right:-10%;
+	top:125%;
+	text-align:left;
+}
+.hr_line{
+	position:relative;
+	background-color:#FFF;
+	height:0.3%;
+	width:100%;
+}
