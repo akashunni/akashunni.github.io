@@ -1,5 +1,3 @@
-<!-- >>>> HAHAHAHA...! I know you would see this..! <<<< -->
-
 <!doctype html>
 <html>
 
@@ -10,28 +8,33 @@
 </head>
 
 <body onLoad="start()">
-    <!-- >>>> HAHAHAHA...! I know you would see this..! <<<< -->
     <div id="section1">
         <div id="skew_green">
             <div class="skew_items">
                 <h1>Contact</h1>
-                <h2>CONTACT</h2>
+                <h2 class="index">CONTACT</h2>
             </div>
             <div class="hr_line"></div>
         </div>
-        <div id="skew_red">
+        <div id="skew_blue">
             <div class="skew_items">
                 <h1>Projects</h1>
-                <h2>PROJECTS</h2>
+                <h2 class="index">PROJECTS</h2>
             </div>
             <div class="hr_line"></div>
+            <div id="skew_blue_content">
+                <p class="tilt_text">1. Android Apps</p>
+            </div>
         </div>
         <div id="skew_black">
             <div class="skew_items">
                 <h1>Akash Unni</h1>
-                <h2>ABOUT ME</h2>
+                <h2 class="index">ABOUT ME</h2>
             </div>
             <div class="hr_line"></div>
+            <div id="skew_black_content">
+                <p class="tilt_text">Hey, I'm Akash Unni.</p>
+            </div>
         </div>
     </div>
     <script>
@@ -41,19 +44,20 @@
         function skew_angle() {
             var theta = Math.atan(width / height);
             document.getElementById("skew_black").style.left = (width / 2) + "px";
-            document.getElementById("skew_red").style.left = width + "px";
+            document.getElementById("skew_blue").style.left = width + "px";
             document.getElementById("skew_green").style.left = width + (width / 4) + "px";
             return theta * (180 / Math.PI);
         }
-        document.getElementById("skew_red").onclick = function() {
-            move_it("skew_red", "skew_green", "skew_black");
-        }
+        document.getElementById("skew_blue").onclick = function() {
+            //document.getElementById("skew_items").getElementsByTagName("h1").item(0).style.transform = "translateX(-25%)";
+            move_it("skew_blue", "skew_green", "skew_black");
+        };
         document.getElementById("skew_green").onclick = function() {
-            move_it("skew_green", "skew_black", "skew_red");
-        }
+            move_it("skew_green", "skew_black", "skew_blue");
+        };
         document.getElementById("skew_black").onclick = function() {
-            move_it("skew_black", "skew_red", "skew_green");
-        }
+            move_it("skew_black", "skew_blue", "skew_green");
+        };
 
         function move_it(first, second, third) {
             var div1 = document.getElementById(first);
@@ -69,20 +73,26 @@
             div2.style.left = width + "px";
             div3.style.left = width + (width / 4) + "px";
         }
-
-        function start() {
-            var angle = skew_angle();
-            var skew_items = document.getElementsByClassName('skew_items');
-            for (i = 0; i < skew_items.length; i++) {
-                skew_items.item(i).style.transform = "skewX(" + (-angle) + "deg)";
+		
+		function start(){
+			var angle = skew_angle();
+			var skew_items = document.getElementsByClassName('skew_items');
+			for(var i = 0; i<skew_items.length; i++){
+				skew_items.item(i).style.transform = "skewX(" + (-angle) + "deg)";
+			}
+			var index = document.getElementsByClassName('index');
+            for(var i = 0; i<index.length; i++){
+                index.item(i).style.transform = "rotate("+(90-angle)+"deg)"
             }
-            skew_items.item(0).getElementsByTagName("h2").item(0).style.transform = "rotate(" + (90 - angle) + "deg)";
-            skew_items.item(1).getElementsByTagName("h2").item(0).style.transform = "rotate(" + (90 - angle) + "deg)";
-            skew_items.item(2).getElementsByTagName("h2").item(0).style.transform = "rotate(" + (90 - angle) + "deg)";
-            document.getElementById("skew_black").style.transform = "skewX(" + angle + "deg)";
-            document.getElementById("skew_green").style.transform = "skewX(" + angle + "deg)";
-            document.getElementById("skew_red").style.transform = "skewX(" + angle + "deg)";
-        }
+            var tilt_text = document.getElementsByClassName('tilt_text');
+            for(var i = 0; i<tilt_text.length; i++){
+                tilt_text.item(i).style.transform = "skewX("+(-angle)+"deg)"
+            }
+        	document.getElementById("skew_black").style.transform = "skewX(" + angle + "deg)";
+        	document.getElementById("skew_green").style.transform = "skewX(" + angle + "deg)";
+        	document.getElementById("skew_blue").style.transform = "skewX(" + angle + "deg)";
+            //document.getElementById("skew_blue_content").style.transform = "skewX(" + angle + "deg)";
+		}
     </script>
 
 </body>
