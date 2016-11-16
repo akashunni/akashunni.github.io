@@ -1,3 +1,6 @@
+
+/* shame on you, code yourself man..*/
+
 html,body, #section1{
 	height:100%;
 	width:100%;
@@ -34,6 +37,15 @@ html,body, #section1{
 	transform:skewX(-45deg);
 	box-shadow:0 0 10px 2px #000;
 }
+#overlay{	
+position:fixed;
+font-size:40px;
+left: 50px;
+position:absolute;
+bottom:0;
+color:#FFF;
+z-index: 2000;
+}
 .skew_items{
 	padding: 2% 2%;
 	color:#FFF;
@@ -46,9 +58,9 @@ html,body, #section1{
 }	
 .index{
 	position:absolute;
-	float:right;
-	right:-10%;
+	right: -10%;
 	top:125%;
+	font-size: 130%;
 	text-align:left;
 }
 .hr_line{
