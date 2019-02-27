@@ -1,76 +1,106 @@
+::-webkit-scrollbar-track
+{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
 
-/* shame on you, code yourself man..*/
+::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
 
-html,body, #section1{
-	height:100%;
-	width:100%;
-	margin: 0;
-	padding: 0;
-	background-color:#607D8B;
-	overflow:hidden;
-	font-family: "Myriad Pro", Arial, serif;
+::-webkit-scrollbar-thumb
+{
+    background-color: rgb(71, 71, 71);
+    border-radius: 5px;
+    border: 1px solid black;
 }
-#skew_green{
-	position:absolute;
-	background-color:#009688;
-	height:100%;
-	width:70%;
-	transition:all 2.5s;
-	transform:skewX(-45deg);
-	box-shadow:0 0 10px 2px #000;
+
+
+.mydiv{
+    height: 100%;
+    background-image: linear-gradient(to bottom right, rgb(12, 43, 185) , rgb(59, 166, 199));
 }
-#skew_blue{
-	position:absolute;
-	background-color:#3F51B5;
-	height:100%;
-	width:70%;
-	transition:all 2s;
-	transform:skewX(-45deg);
-	box-shadow:0 0 10px 2px #000;
+.myrow{
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 5% 5% 3% 5%; */
 }
-#skew_black{
-	position:relative;
-	background-color:rgba(41,41,41,1.00);
-	height:100%;
-	width:70%;
-	transition:all 1s;
-	transform:skewX(-45deg);
-	box-shadow:0 0 10px 2px #000;
+.mymarginrow{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5% 5% 3% 5%; 
 }
-#overlay{	
-position:fixed;
-font-size:40px;
-left: 50px;
-position:absolute;
-bottom:0;
-color:#FFF;
-z-index: 2000;
+.avatar{
+    background-image: linear-gradient(to bottom right, rgb(214, 0, 0) , #ffbf00);
+    transform: skewY(-5deg);
+    /* margin-top: -60px; */
+    margin-bottom: 50px;
+    transform-origin: top left;
+    min-height: 250px;
+    -webkit-box-shadow: 0px 10px 23px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 23px -4px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 23px -4px rgba(0,0,0,0.75);
 }
-.skew_items{
-	padding: 2% 2%;
-	color:#FFF;
+.avatar_flex{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    padding: 0 20px 0 20px;
 }
-.skew_items h1{
-	margin:0;
-	font-size:52px;
-	font-weight:300;
-	transition:all 1s;
-}	
-.index{
-	position:absolute;
-	right: -10%;
-	top:125%;
-	font-size: 130%;
-	text-align:left;
+.avatar_img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transform: skewY(5deg);
+    box-shadow: 0px 10px 23px -4px rgba(0,0,0,0.75);
 }
-.hr_line{
-	position:relative;
-	background-color:#FFF;
-	height:0.3%;
-	width:100%;
+.avatar_name{
+    margin-left: 2%;
+    font-family: 'Nunito', sans-serif;
+    color: white;
 }
-.tilt_text{
-    color: #FFF;
-    padding: 1% 0 0 2%;
-    margin: 0;
+.myname{
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 5% 0 0 0;
 }
+.mycard{
+    height: 200px;
+    min-width: 400px;
+    margin: 0 20px 60px 20px;
+    /* margin-right: 20px;
+    margin-bottom: 60px; */
+    cursor: pointer;
+    background-color: white;
+    border-radius: 8px;
+    -webkit-box-shadow: 10px 20px 92px -13px rgba(0,0,0,0.5);
+    -moz-box-shadow: 10px 20px 92px -13px rgba(0,0,0,0.5);
+    box-shadow: 10px 20px 92px -13px rgba(0,0,0,0.5);
+    -webkit-transform:skew(-10deg);
+    -moz-transform:skew(-10deg);
+    transform:skew(-10deg);
+    transition: .3s;
+}
+.mycard:hover{
+    -webkit-box-shadow: 5px 10px 46px -13px rgba(0,0,0,0.5);
+    -moz-box-shadow: 5px 10px 46px -13px rgba(0,0,0,0.5);
+    box-shadow: 5px 10px 46px -13px rgba(0,0,0,0.5);
+    /* height: 500px; */
+    /* width: 100%; */
+    /* order: 1; */
+    /* -webkit-transform:skew(0deg);
+    -moz-transform:skew(0deg);
+    transform:skew(0deg); */
+}
+@media only screen and (max-width: 600px) {
+    .mycard {
+      width: 100%;
+      min-width: 100%;
+    }
+  }

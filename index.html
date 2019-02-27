@@ -1,103 +1,35 @@
-<!doctype html>
-<html>
-<!-- I know you would come here, hmm.. code yourself.! -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Akash Unni</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <title>Akash Unni</title>
 </head>
+<body>
 
-<body onLoad="start()">
-	<div id="overlay">
-    	<p><span style="color:yellow"><i>////////// </i></span>Site under construction..!<span style="color:yellow"><i> //////////</i></span></p>
-    </div>
-    <div id="section1">
-        <div id="skew_green">
-            <div class="skew_items">
-                <h1>Contact</h1>
-                <h2 class="index">CONTACT</h2>
-            </div>
-            <div class="hr_line"></div>
-        </div>
-        <div id="skew_blue">
-            <div class="skew_items">
-                <h1>Projects</h1>
-                <h2 class="index">PROJECTS</h2>
-            </div>
-            <div class="hr_line"></div>
-            <div id="skew_blue_content">
-                <p class="tilt_text">1. Android Apps</p>
+    <div class="mydiv">
+        <div class="avatar myrow">
+            <div class="avatar_flex">
+                <img src="pic.jpg" class="avatar_img">
+                <div class="avatar_name">
+                    <h1 class="myname">Akash Unni</h1>
+                    <small>This page is under construction.</small>
+                </div>
             </div>
         </div>
-        <div id="skew_black">
-            <div class="skew_items">
-                <h1>Akash Unni</h1>
-                <h2 class="index">ABOUT ME</h2>
+        <div class="mymarginrow justify-content-around">
+            <div class="mycard bg-danger ">
             </div>
-            <div class="hr_line"></div>
-            <div id="skew_black_content">
-                <p class="tilt_text">Hey, I'm Akash Unni.</p>
-            </div>
+            <div class="mycard bg-info"></div>
+            <div class="mycard bg-warning"></div>
+            <div class="mycard bg-success"></div>
         </div>
     </div>
-    <script>
-        var height = document.documentElement.clientHeight;
-        var width = (document.documentElement.clientWidth) * 0.3;
-
-        function skew_angle() {
-            var theta = Math.atan(width / height);
-            document.getElementById("skew_black").style.left = (width / 2) + "px";
-            document.getElementById("skew_blue").style.left = width + "px";
-            document.getElementById("skew_green").style.left = width + (width / 4) + "px";
-            return theta * (180 / Math.PI);
-        }
-        document.getElementById("skew_blue").onclick = function() {
-            //document.getElementById("skew_items").getElementsByTagName("h1").item(0).style.transform = "translateX(-25%)";
-            move_it("skew_blue", "skew_green", "skew_black");
-        };
-        document.getElementById("skew_green").onclick = function() {
-            move_it("skew_green", "skew_black", "skew_blue");
-        };
-        document.getElementById("skew_black").onclick = function() {
-            move_it("skew_black", "skew_blue", "skew_green");
-        };
-
-        function move_it(first, second, third) {
-            var div1 = document.getElementById(first);
-            var div2 = document.getElementById(second);
-            var div3 = document.getElementById(third);
-            div1.style.zIndex = 300;
-            div2.style.zIndex = 200;
-            div3.style.zIndex = 100;
-            div1.style.transition = "all 0.7s";
-            div2.style.transition = "all 1.3s";
-            div3.style.transition = "all 1.9s";
-            div1.style.left = (width / 2) + "px";
-            div2.style.left = width + "px";
-            div3.style.left = width + (width / 4) + "px";
-        }
-		
-		function start(){
-			var angle = skew_angle();
-			var skew_items = document.getElementsByClassName('skew_items');
-			for(var i = 0; i<skew_items.length; i++){
-				skew_items.item(i).style.transform = "skewX(" + (-angle) + "deg)";
-			}
-			var index = document.getElementsByClassName('index');
-            for(var i = 0; i<index.length; i++){
-                index.item(i).style.transform = "rotate("+(90-angle)+"deg)"
-            }
-            var tilt_text = document.getElementsByClassName('tilt_text');
-            for(var i = 0; i<tilt_text.length; i++){
-                tilt_text.item(i).style.transform = "skewX("+(-angle)+"deg)"
-            }
-        	document.getElementById("skew_black").style.transform = "skewX(" + angle + "deg)";
-        	document.getElementById("skew_green").style.transform = "skewX(" + angle + "deg)";
-        	document.getElementById("skew_blue").style.transform = "skewX(" + angle + "deg)";
-            //document.getElementById("skew_blue_content").style.transform = "skewX(" + angle + "deg)";
-		}
-    </script>
+    
 
 </body>
-
 </html>
