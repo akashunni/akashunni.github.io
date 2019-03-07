@@ -16,10 +16,9 @@
     border-radius: 5px;
     border: 1px solid black;
 }
-
-
 .mydiv{
     height: 100%;
+    padding-bottom: 5%;
     background-image: linear-gradient(to bottom right, rgb(12, 43, 185) , rgb(59, 166, 199));
 }
 .myrow{
@@ -30,15 +29,16 @@
 .mymarginrow{
     display: flex;
     flex-wrap: wrap;
-    margin: 5% 5% 3% 5%; 
+    margin: 0% 5% 10% 5%; 
 }
 .avatar{
     background-image: linear-gradient(to bottom right, rgb(214, 0, 0) , #ffbf00);
     transform: skewY(-5deg);
     /* margin-top: -60px; */
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     transform-origin: top left;
     min-height: 250px;
+    transition: box-shadow .3s;
     -webkit-box-shadow: 0px 10px 23px -4px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 10px 23px -4px rgba(0,0,0,0.75);
     box-shadow: 0px 10px 23px -4px rgba(0,0,0,0.75);
@@ -57,6 +57,7 @@
     border-radius: 50%;
     border: 2px solid white;
     transform: skewY(5deg);
+    transition: box-shadow .3s;
     box-shadow: 0px 10px 23px -4px rgba(0,0,0,0.75);
 }
 .avatar_name{
@@ -64,16 +65,34 @@
     font-family: 'Nunito', sans-serif;
     color: white;
 }
+.avatar:hover{
+    -webkit-box-shadow: 0px 5px 23px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 23px -4px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 23px -4px rgba(0,0,0,0.75);
+}
+.avatar:hover .myname{
+    text-shadow: 0px 5px 10px rgba(0,0,0,0.75);
+}
+.avatar:hover small{
+    text-shadow: 0px 5px 10px rgba(0,0,0,0.75);
+}
+.avatar:hover .avatar_img{
+    box-shadow: 0px 15px 23px -4px rgba(0,0,0,0.75);
+}
+small{
+    transition: text-shadow .3s;
+}
 .myname{
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 1;
     margin: 5% 0 0 0;
+    transition: text-shadow .3s;
 }
 .mycard{
-    height: 200px;
+    height: 250px;
     min-width: 400px;
-    margin: 0 20px 60px 20px;
+    margin: 30px 20px 30px 20px;
     /* margin-right: 20px;
     margin-bottom: 60px; */
     cursor: pointer;
@@ -98,9 +117,97 @@
     -moz-transform:skew(0deg);
     transform:skew(0deg); */
 }
+.footer{
+    overflow: hidden;
+}
+.footer-skewed{
+    /* position: absolute; */
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top right, rgb(214, 0, 0) , #ffbf00);
+    transform: skewY(-5deg);
+    transform-origin: 0;
+    -webkit-box-shadow: 0px -10px 23px -4px rgba(0,0,0,0.75), 0px 10px 23px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -10px 23px -4px rgba(0,0,0,0.75), 0px 10px 23px -4px rgba(0,0,0,0.75);
+    box-shadow: 0px -5px 23px -4px rgba(0,0,0,0.75), 0px 10px 23px -4px rgba(0,0,0,0.75);
+}
+.footer-oppskewed{
+    /* position: absolute; */
+    width: 100%;
+    height: 100px;
+    margin-top: -85px;
+    background-image: linear-gradient(to top right, rgb(167, 0, 0) , #ad8100);
+    transform: skewY(1deg);
+    transform-origin: 0;
+    -webkit-box-shadow: 0px -10px 23px -4px rgba(0,0,0,0.75), 0px 10px 23px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -10px 23px -4px rgba(0,0,0,0.75), 0px 10px 23px -4px rgba(0,0,0,0.75);
+    box-shadow: 0px -5px 23px -4px rgba(0,0,0,0.75), 0px 10px 23px -4px rgba(0,0,0,0.75);
+}
+.footer-content{
+    position: relative;
+    margin: 7% 30px 40px 30px;
+    /* transform: skewY(5deg); */
+    color: white;
+    /* text-decoration: none;
+    background: linear-gradient(to right, white, white, transparent);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: 150px 4px; */
+}
+/* .footer-heading::after {
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    content: "";
+    height: 4px;
+    width: 150px;
+    border-radius: 2px;
+    background: linear-gradient(to right, white, white, transparent);
+} */
+.foot-first{
+    width: 25%;
+    margin-left: auto;
+    border-radius: 15px 0 0 15px;
+}
+.foot-last{
+    width: 25%;
+    border-radius: 0 15px 15px 0;
+    /* margin-bottom: 5%; */
+}
+.each-connect{
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+a span{
+    padding-left: 10px;
+}
+a{
+    color: white;
+}
+a:hover{
+    text-decoration: none;
+    color: white;
+}
 @media only screen and (max-width: 600px) {
     .mycard {
-      width: 100%;
-      min-width: 100%;
+        width: 100%;
+        min-width: 100%;
     }
-  }
+}
+@media only screen and (max-width: 1000px) {
+    .mymarginrow {
+        margin-bottom: 25%;
+    }
+}
+/* @media only screen and (min-width: 1400px) {
+    .mymarginrow {
+        margin-bottom: 10%;
+    }
+} */
